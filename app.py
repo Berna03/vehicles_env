@@ -8,7 +8,7 @@ car_data = pd.read_csv('notebooks/vehicles_us.csv')
 
 # Crear un botón en la aplicación Streamlit
 hist_button = st.button('Construir histograma')
-
+scat_button = st.button('Construir un diagrama de dispersion')
 # Lógica a ejecutar cuando se hace clic en el botón
 if hist_button:
     # Escribir un mensaje en la aplicación
@@ -30,3 +30,25 @@ build_histogram = st.checkbox('Construir un histograma')
 
 if build_histogram:  # si la casilla de verificación está seleccionada
     st.write('Construir un histograma para la columna odómetro')
+
+if scat_button:
+    # Escribir un mensaje en la aplicación
+    st.write(
+        'Creación de un diagrama de dispersion para el conjunto de datos de anuncios de venta de coches')
+
+    # Crear un scatter plot utilizando plotly.graph_objects
+    # Se crea una figura vacía y luego se añade un rastro de scatter
+    fig_1 = go.Figure(
+        data=[go.Scatter(x=car_data['odometer'], y=car_data['price'], mode='markers')])
+
+    # Opcional: Puedes añadir un título al gráfico si lo deseas
+    fig_1.update_layout(title_text='Relación entre Odómetro y Precio')
+
+    # Mostrar el gráfico Plotly interactivo en la aplicación Streamlit
+
+# crear una casilla de verificación
+build_scatter = st.checkbox('Construir un diagrama de dispersion')
+
+if build_scatter:  # si la casilla de verificación está seleccionada
+    st.write(
+        'Construir un diagrama de dispersion para la relación entre odometro y precio')
