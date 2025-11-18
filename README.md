@@ -1,1 +1,1 @@
-# vehicles_env
+"Esta aplicación web permite explorar un conjunto de datos de anuncios de venta de coches. Los usuarios pueden visualizar distribuciones de precios, comparar diferentes marcas y modelos, y filtrar los datos según sus preferencias."
